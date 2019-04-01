@@ -49,7 +49,8 @@ function Dot(id, x, y, useCache) {
 }
 ```
 
-### 缓存
+### 离屏绘制进行预渲染
+可以先把待绘制的区域裁剪好，保存在一个离屏的 `canvas `对象中。在绘制每一帧的时候，在将这个对象绘制到 `canvas `画板中
 实例化星星的时候会使用缓存, 利用新建一个画布, 保存信息, 使用的时候直接使用`ctx.drawImage(this.cacheCanvas, this.x - this.r, this.y - this.r) // 左上角的坐标`
 ```js
 cache: function() {
